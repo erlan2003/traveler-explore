@@ -1,0 +1,141 @@
+.login-buton{
+    padding-left: 100px;
+}
+
+.hello-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #ffc107;
+    color: black;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hello-text:hover {
+    transform: translateY(-3px);
+    color: green;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.user-info-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.user-info-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.user-info {
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.nav-link strong {
+    color: #007bff;
+}
+
+.btn-logout {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+}
+
+.btn-logout:focus {
+    outline: none;
+}
+
+@media (max-width: 576px) {
+    .user-info-card {
+        padding: 20px;
+    }
+    .btn-logout {
+        font-size: 16px;
+    }
+}
+
+.attractions-container {
+    padding-top: 60px;
+    padding-left: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.attraction-card {
+    width: 400px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.attraction-card:hover {
+    transform: translateY(-10px);
+}
+
+.attraction-image img {
+    width: 420px;
+    height: 300px;
+    border-bottom: 1px solid #ddd;
+}
+
+.attraction-info {
+    padding: 30px 15px 30px 15px;
+}
+
+.attraction-info h3 {
+    font-size: 25px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.attraction-info p {
+    font-size: 20px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.attraction-link {
+    text-decoration: none;
+    color: inherit;
+}

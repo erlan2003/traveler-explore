@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="../../static/css/register.css">
+
+<div class="main-w3layouts wrapper">
+    <h1>Создайте аккаунт</h1>
+    <div class="main-agileinfo">
+        <div class="agileits-top">
+            <form method="post">
+                {% csrf_token %}
+                <input class="form-control" type="text" name="username" placeholder="Имя пользователя" required="">
+                <input class="form-control" type="email" name="email" placeholder="Электронная почта" required="">
+                <input class="form-control" type="password" name="password1" placeholder="Пароль" required="">
+                <input class="form-control" type="password" name="password2" placeholder="Подтвердите пароль" required="">
+
+                {{ form.errors }}
+                <button type="submit" class="btn-submit">Зарегистрироваться</button>
+            </form>
+            <p>Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
+        </div>
+    </div>
+
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Достопримечательности</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+    <link rel="stylesheet" href="../static/css/animate.css">
+    
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../static/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="../static/css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="../static/css/flaticon.css">
+    <link rel="stylesheet" href="../static/css/icomoon.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+
+    <style>
+      .attractions-hero {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        padding: 50px 0;
+        background-size: cover;
+        background-position: center;
+      }
+    
+      .attractions-hero .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    
+      .attractions-hero h1 {
+        font-size: 50px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    
+      .attractions-hero p {
+        font-size: 22px;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.5;
+      }
+    
+      .btn-outline-light {
+        border: 2px solid #ffffff;
+        color: white;
+        background: transparent;
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 12px 30px;
+        border-radius: 50px;
+        transition: 0.3s;
+      }
+    
+      .btn-outline-light:hover {
+        background-color: #ffffff;
+        color: #333;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+      }
+    
+      .btn-outline-light i {
+        margin-right: 10px;
+      }
+
+      /* Общий стиль для формы */
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+/* Стиль для поля ввода */
+.search-input {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  width: 50%;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #999;
+}
+
+/* Стиль для кнопки */
+.search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.search-button:active {
+  background-color: #004085;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .search-form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .search-input, .search-button {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 25px;
+  }
+
+  .search-button {
+    margin-left: 0;
+  }
+}
+
+    </style>
+
+  </head>
+  <body>
+    <div class="container pt-5">
+      <div class="row justify-content-between">
+          <div class="col">
+              <a class="navbar-brand" href="">Traveler<span>explore.</span></a>
+          </div>
+          <div class="col d-flex justify-content-end">
+              <div class="social-media">
+              <p class="mb-0 d-flex">
+                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+              </p>
+      </div>
+          </div>
+      </div>
+  </div>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	    
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Главная</a></li>
+                <li class="nav-item active"><a href="{% url 'attractions' %}" class="nav-link">Достопримечательности</a></li>
+                <!-- <li class="nav-item"><a href="{% url 'tours' %}" class="nav-link">Туры</a></li> -->
+                <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">О нас</a></li>
+                {% if user.is_authenticated %}
+                  <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link">Профиль</a></li>
+                {% endif %}
+                <li class="nav-item"><a href="{% url 'admin:index' %}" class="nav-link">Панель Администратора</a></li>
+                <!-- <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Контакты</a></li> -->
+	        </ul>
+	      </div>
+
+        <form method="get" action="{% url 'search_attractions' %}" class="search-form">
+          <input type="text" name="query" value="{{ query }}" placeholder="Поиск достопримечательности" class="search-input">
+          <button type="submit" class="search-button">Поиск</button>
+        </form>        
+	    </div>
+	  </nav>
+
+
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('../static/images/kg-1.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+          <div class="col-md-9 ftco-animate pb-5">
+          	<p class="breadcrumbs mb-2"><span class="mr-2"><a href="../">Главная <i class="ion-ios-arrow-forward"></i></a></span> <span>Достопримечательности <i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-0 bread">Достопримечательности</h1>
+          </div>
+        </div>
+      </div>
+
+
+    {% if attractions %}
+    <div class="attractions-container">
+      {% for attraction in attractions %}
+      <div class="attraction-card">
+    <a href="{% url 'attraction_detail' pk=attraction.id %}" class="attraction-link">
+              <div class="attraction-image">
+                  {% if attraction.image_path %}
+                      <img src="data:image/jpeg;base64,{{ attraction.image_path }}">
+                  {% else %}
+                      <p>No image</p>
+                  {% endif %}
+              </div>
+              <div class="attraction-info">
+                  <h3>{{ attraction.name }}</h3>
+                  <p><strong>Регион:</strong> {{ attraction.region_id.name }}</p>
+                  <p><strong>Тип достопрмечательности:</strong> {{ attraction.attraction_type_id.name }}</p>
+              </div>
+          </a>
+      </div>
+      {% endfor %}
+  </div>
+    {% else %}
+        <p>Ничего не найдено</p>
+    {% endif %}
+
+     
+
+    <section class="attractions-hero" style="background-image: url('../static/images/kg-1.jpg'); background-size: cover; background-position: center; height: 80vh;" data-stellar-background-ratio="0.5">
+      <div class="overlay" style="background-color: rgba(0, 0, 0, 0.5); height: 100%;"></div>
+      <div class="container" style="position: relative; z-index: 2;">
+        <div class="row justify-content-center align-items-center" style="height: 100%;">
+          <div class="col-md-8 text-center ftco-animate">
+            <h1 class="mb-4 bread text-white font-weight-bold" style="font-size: 48px;">Достопримечательности</h1>
+            <p class="lead text-white mb-4" style="font-size: 24px;">Добавьте свою уникальную достопримечательность в наш список и поделитесь удивительными местами с миром!</p>
+            
+            <!-- Лозунг с кнопкой для добавления -->
+            <a href="{% url 'add_attraction' %}" class="btn btn-lg btn-outline-light" style="border-radius: 50px; padding: 15px 30px; font-size: 18px; transition: all 0.3s ease;">
+              <i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить достопримечательность
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="../static/js/jquery.min.js"></script>
+  <script src="../static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../static/js/popper.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/jquery.easing.1.3.js"></script>
+  <script src="../static/js/jquery.waypoints.min.js"></script>
+  <script src="../static/js/jquery.stellar.min.js"></script>
+  <script src="../static/js/jquery.animateNumber.min.js"></script>
+  <script src="../static/js/owl.carousel.min.js"></script>
+  <script src="../static/js/jquery.magnific-popup.min.js"></script>
+  <script src="../static/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="../static/js/google-map.js"></script>
+  <script src="../static/js/main.js"></script>    
+
+  <script>
+    document.querySelector('.searchform').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      let query = document.querySelector('input[name="query"]').value;
+      
+      fetch(`/search_attractions/?query=${query}`)
+        .then(response => response.json())
+        .then(data => {
+          const attractionsContainer = document.querySelector('.attractions-container');
+          attractionsContainer.innerHTML = ''; // Очистить текущие результаты
+          
+          data.attractions.forEach(attraction => {
+            let card = document.createElement('div');
+            card.classList.add('attraction-card');
+            
+            card.innerHTML = `
+              <a href="/attractions/${attraction.id}" class="attraction-link">
+                <div class="attraction-image">
+                  ${attraction.image_path ? `<img src="data:image/jpeg;base64,${attraction.image_path}" />` : '<p>No image</p>'}
+                </div>
+                <div class="attraction-info">
+                  <h3>${attraction.name}</h3>
+                  <p><strong>Регион:</strong> ${attraction.region}</p>
+                  <p><strong>Тип достопримечательности:</strong> ${attraction.attraction_type}</p>
+                </div>
+              </a>
+            `;
+            
+            attractionsContainer.appendChild(card);
+          });
+        });
+    });
+  </script>
+  
+  </body>
+</html>

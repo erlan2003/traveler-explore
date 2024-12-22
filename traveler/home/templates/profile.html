@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Профиль</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+    <link rel="stylesheet" href="../static/css/animate.css">
+    
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../static/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="../static/css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="../static/css/flaticon.css">
+    <link rel="stylesheet" href="../static/css/icomoon.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+  </head>
+  <body>
+
+    <div class="container pt-5">
+			<div class="row justify-content-between">
+				<div class="col">
+					<a class="navbar-brand" href="../">Traveler<span>explore.</span></a>
+				</div>
+				<div class="col d-flex justify-content-end">
+					<div class="social-media">
+		    		<p class="mb-0 d-flex">
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+		    		</p>
+	        </div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	    
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="{% url 'attractions' %}" class="nav-link">Достопримечательности</a></li>
+                <!-- <li class="nav-item"><a href="{% url 'tours' %}" class="nav-link">Туры</a></li> -->
+                <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">О нас</a></li>
+                <li class="nav-item active"><a href="{% url 'profile' %}" class="nav-link">Профиль</a></li>
+                <!-- <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Контакты</a></li> -->
+				<li class="nav-item"><a href="{% url 'admin:index' %}" class="nav-link">Панель Администратора</a></li>
+
+	        </ul>
+	      </div>
+          {% if user.is_authenticated %}
+          <div class="hello-text">
+            Привет, {{ user.username }}! <span class="emoji">😊</span>
+          </div>
+      {% else %}
+          <a class="hello-text" href="{% url 'login' %}">Авторизация</a>
+      {% endif %}
+        
+	    </div>
+	  </nav>
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('../static/images/kg-1.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+          <div class="col-md-9 ftco-animate pb-5">
+          	<p class="breadcrumbs mb-2"><span class="mr-2"><a href="../">Главная <i class="ion-ios-arrow-forward"></i></a></span> <span>Профиль<i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-0 bread">Профиль</h1>
+          </div>
+        </div>
+      </div>
+
+      {% if user.is_authenticated %}
+      <div class="user-info-wrapper">
+          <div class="user-info-card">
+              <div class="user-info">
+                  <div class="nav-link"><strong>Имя пользователя:</strong> {{ user.username }}</div>
+                  <div class="nav-link"><strong>Email:</strong> {{ user.email }}</div>
+                  <div class="nav-link"><strong>Дата регистрации:</strong> {{ user.date_joined|date:"d M Y" }}</div>
+              </div>
+              <form method="POST" action="{% url 'logout' %}?next=/">
+                  {% csrf_token %}
+                  <button type="submit" class="btn-logout">Выйти</button>
+              </form>
+          </div>
+      </div>
+  {% endif %}
+  
+
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="../static/js/jquery.min.js"></script>
+  <script src="../static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../static/js/popper.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/jquery.easing.1.3.js"></script>
+  <script src="../static/js/jquery.waypoints.min.js"></script>
+  <script src="../static/js/jquery.stellar.min.js"></script>
+  <script src="../static/js/jquery.animateNumber.min.js"></script>
+  <script src="../static/js/owl.carousel.min.js"></script>
+  <script src="../static/js/jquery.magnific-popup.min.js"></script>
+  <script src="../static/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="../static/js/google-map.js"></script>
+  <script src="../static/js/main.js"></script>
+    
+  </body>
+</html>
